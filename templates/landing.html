@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>
+	<strong>
+		<ins>
+		Шифровка & расшифровка по алгоритму AES
+		</ins>
+	</strong>
+</h2>
+<!-- <a href='/getkeys'>Получить ключи</a>-->
+<form action='/results' method='post' enctype="multipart/form-data">
+	<div>
+		<label>Выберите файл</label>
+		<input type='file' name="selected">
+		<input type="radio" name="crypt" value='encrypt'>Зашифровать</input>
+		<input type="radio" name="crypt" value='decrypt'>Расшифровать</input>
+		<textarea name='key' cols='30' rows='4'>Введите ключ</textarea>
+		<textarea name='nonce' cols='10' rows='2'>Введите одноразовый код(nonce)</textarea>
+		<input id="sbmtbtn" type="submit" value="Отправить">
+	</div>
+</form>
+<p>
+При шифровании/расшифровке необходимо ввести ключ в третье поле.
+* nonce - Однократно используемое число (от англ. nonce — «number that can only be used once» — число, которое может быть использовано один раз) в криптографии — одноразовый код, выбранный случайным или псевдослучайным образом, который используется для безопасной передачи основного пароля, предотвращая атаку повторного воспроизведения. В отличие от случайных чисел, здесь не требуется непредсказуемости числа, достаточно неповторяемости.
+</p>
+<article>
+<!-- -->
+</article>
+{% endblock %}

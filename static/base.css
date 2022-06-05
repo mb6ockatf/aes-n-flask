@@ -1,0 +1,15 @@
+@font-face {
+		font-family: 'JetBrainsMono';
+		src: url(fonts/JetBrainsMono-Medium.ttf);
+}
+body {
+		font-family: JetBrainsMono;
+		background-color: black;
+		color: white;
+}
+h2 {
+		margin: inheirit;
+}
+div {
+		display: block;
+		}
