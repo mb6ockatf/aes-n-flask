@@ -1,9 +1,0 @@
-@import 'base.css';
-form {  margin: 0 auto;
-		width: auto;
-		padding: 1em;
-		border: 1px solid white;
-		border-radius: 1em;}
-#sbmtbtn {
-		margin-left: 2em;
-}
