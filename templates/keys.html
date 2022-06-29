@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<form action='/keys_form_handler' method='post' enctype="multipart/form-data">
+	<div>
+		<textarea name='key' cols='30' rows='1'>Ключ</textarea>
+		<input id="sbmtbtn" type="submit" value="Отправить">
+	</div>
+</form>
+{% endblock %}}
+
