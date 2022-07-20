@@ -3,14 +3,13 @@
 	<head>
 		<meta charset="utf8">
 		<link href="../static/base.css" rel="stylesheet">
+		<link rel="shortcut icon" href="{{url_for('static', filename='favicon.ico') }}">
 		<title>AES encryptor & decryptor</title>
 	</head>
 	<body>
 		<h2>
 			<strong>
 				<a href="/"><ins>Шифровка & расшифровка по алгоритму AES</ins></a>
-				|
-				<a href="/keys"><ins>Ключи</ins></a>
 			</strong>
 		</h2>
 		{% block content %}{% endblock %}

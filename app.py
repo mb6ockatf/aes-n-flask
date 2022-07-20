@@ -1,11 +1,12 @@
-from flask import Flask, request, render_template, send_file, flash, redirect, session
-from datetime import datetime as dt
-from Crypto.Cipher import AES
-from werkzeug.exceptions import HTTPException
-import os
-from shutil import make_archive
+from os import path, mkdir, remove
 from sys import argv
+from datetime import datetime as dt
 from base64 import encodebytes
+from shutil import make_archive
+from flask import Flask, request, render_template, send_file, flash, redirect, session, url_for
+from werkzeug.exceptions import HTTPException
+from Crypto.Cipher import AES
+
 
 def encrypt(data: bytes, key: bytes):
     cipher = AES.new(key, AES.MODE_EAX)
@@ -19,57 +20,53 @@ def decrypt(ciphertext: bytes, key: bytes, nonce: bytes):
    return plaintext
 
 
-
 app = Flask(__name__)
 app.secret_key = argv[1].encode()
 app.permanent_session_lifetime = False
 
 
+@app.route("/favicon.ico")
+def favicon():
+    return redirect(url_for('static'), filename='favicon.ico')
+
+
 @app.route("/")
 def main():
-    return render_template("landing.html") 
+    return render_template("landing.html")
+
 
 @app.route("/crypto_form_handler", methods=["GET", "POST"])
 def crypto_form_handler():
-    c_time = str(dt.now()).replace(' ', '$')
-    try:
-        file = request.files['selected']
-    except KeyError:
-        raise
-    if file.filename == '':
-        flash('Файл не загружен')
-        return redirect(request.url)
-    os.mkdir(c_time, mode=0o777)
-    file.save(os.path.join(c_time, 'uploaded.bin'))
+    c_time = str(dt.now()).replace(' ', '-')
+    mkdir(c_time, mode=0o777)
+    uploaded_path = f"{c_time}/uploaded.bin"
+    nonce_path = f"{c_time}/nonce.bin"
+    result_path = f"{c_time}/result.bin"
+    encrypted_archieve = f"{c_time}/encrypted.tar"
+    file = request.files['selected'].save(uploaded_path)
+    file = open(uploaded_path, 'rb').read()
     key = request.form['key'].encode()
-    file = open(os.path.join(c_time, 'uploaded.bin'), 'rb').read()
-    if request.form['crypt'] == 'encrypt':
-         os.mkdir(os.path.join(c_time, "result"), mode=0o777)
+    mode = request.form['crypt']
+    if mode == 'encrypt':
          result, nonce = encrypt(file, key)
-         with open(os.path.join(c_time, "result", "nonce.bin"), "wb") as file:
+         with open(nonce_path, "wb") as file:
              file.write(nonce)
-         with open(os.path.join(c_time, "result", "result.bin"), "wb") as file:
+         with open(result_path, "wb") as file:
              file.write(result)
-         make_archive(os.path.join(c_time, "encrypted"), 'tar',
-             os.path.join(c_time, "result"))
-         return send_file(os.path.join(c_time, "encrypted.tar"))
-    elif request.form['crypt'] == 'decrypt':
-        nonce = request.files["nonce"].save(os.path.join(c_time, "nonce.bin"))
-        with open(os.path.join(c_time, "nonce.bin"), "rb") as stream:
+         return send_file(make_archive("encrypted", "tar", c_time))
+    elif mode == 'decrypt':
+        nonce = request.files["nonce"].save(nonce_path)
+        with open(nonce_path, "rb") as stream:
             nonce = stream.read()
         result = decrypt(file, key, nonce)
-        with open(os.path.join(c_time, "result.bin"), "wb") as file:
+        with open(result_path, "wb") as file:
             file.write(result)
-        return send_file(os.path.join(c_time, "result.bin"))
+        return send_file(result_path)
     else:
-        print(1)
         flash('Режим не выбран')
         return redirect(request.url)
-
-
-@app.route("/keys")
-def keys():
-    return render_template("keys.html")
+    file.close()
+    remove(c_time)
 
 
 @app.route("/keys_form_handler", methods=["GET", "POST"])
@@ -79,7 +76,7 @@ def keys_from_handler():
     nonce = cipher.nonce
     print(nonce.decode())
 
-"""
+
 @app.errorhandler(HTTPException)
 def http_error_handler(error):
     return render_template("error.html", error=error), error.code
@@ -88,14 +85,9 @@ def http_error_handler(error):
 @app.errorhandler(Exception)
 def other_error_handler(error):
     return render_template("error.html", error=error)
-"""
-app.run(debug=True)
-"""
-public, private = newkeys(512)
-message = 'Hello, world'.encode('utf8')
-print("The text in utf8 is:", message)
-crypto = encrypt(message, public)
-print("Crypto is", crypto)
-message = decrypt(crypto, private).decode('utf8')
-print("Decrypted message is", message)
-"""
+
+
+if __name__ == "__main__":
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=8080)
+
