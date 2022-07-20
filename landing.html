@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- <a href='/getkeys'>Получить ключи</a>-->
+<form action='/crypto_form_handler' method='post' enctype="multipart/form-data">
+	<div>
+		<p>
+		<label for='file-upload'>Выберите файл</label>
+		<input type='file' name="selected" id='file-upload' required />
+		</p>
+
+		<p>
+		<input type="radio" name="crypt" value='encrypt' id='encrypt' required />
+		<label for='encrypt'>Зашифровать</label>	
+		<input type="radio" name="crypt" value='decrypt' id='decrypt' required />
+		<label for='decrypt'>Расшифровать</label>
+		</p>
+		<p>
+		<textarea name='key' cols='30' minlength='16' maxlength='32'
+				required rows='1'>Ключ</textarea>
+		</p>
+		<p>
+		<label for='nonce'>Одноразовый код (nonce)</label>
+		<input type='file' name='nonce' id='nonce' />
+		</p>
+		<p>
+		<input id="sbmtbtn" type="submit" value="Отправить" />
+		</p>
+	</div>
+</form>
+<p>
+При шифровании/расшифровке необходимо ввести ключ в третье поле.
+* nonce - Однократно используемое число (от англ. nonce — «number that can only be used once» — число, которое может быть использовано один раз) в криптографии — одноразовый код, выбранный случайным или псевдослучайным образом, который используется для безопасной передачи основного пароля, предотвращая атаку повторного воспроизведения. В отличие от случайных чисел, здесь не требуется непредсказуемости числа, достаточно неповторяемости.
+</p>
+{% endblock %}
