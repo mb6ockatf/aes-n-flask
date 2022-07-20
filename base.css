@@ -1,0 +1,34 @@
+@font-face {
+	font-family: 'JetBrainsMono';
+	src: url(fonts/JetBrainsMono-Medium.ttf);
+	}
+body {
+	font-family: JetBrainsMono;
+	background-color: black;
+	color: white;
+	}
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 30px;
+	}
+input {
+	font-family: 'JetBrainsMono';
+	border: none;
+	margin: unset;
+	vertical-align: top;
+	}
+form {
+	margin: 0 auto;
+	width: auto;
+	padding: 1em;
+	border: 3px solid white;
+	border-radius: 1em;
+	}
+#sbmtbtn {margin-left: 2em;}
+a 	{
+	color: white;
+	}
+textarea {
+	font-family: 'JetBrainsMono';
+	font-size: medium;
+	}
+
