@@ -1,3 +1,4 @@
-flask
+flask>=2.2.2
+waitress>=2.1.2
+Werkzeug>=2.2.2
 pycryptodome
-waitress
