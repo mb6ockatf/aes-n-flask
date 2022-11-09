@@ -1,28 +1,17 @@
-from os import mkdir, remove, chmod, rmdir
-from sys import argv
+import os
+import sys
 from datetime import datetime as dt
 from shutil import make_archive
 from flask import Flask, request, render_template, send_file, flash, redirect, session, url_for
 from werkzeug.exceptions import HTTPException
 from Crypto.Cipher import AES
 from stat import S_IWRITE
-from shutil import rmtree
-
-
-def encrypt(data: bytes, key: bytes):
-    cipher = AES.new(key, AES.MODE_EAX)
-    ciphertext = cipher.encrypt(data)
-    return ciphertext, cipher.nonce
-
-
-def decrypt(ciphertext: bytes, key: bytes, nonce: bytes):
-    cipher = AES.new(key, AES.MODE_EAX, nonce=nonce)
-    plaintext = cipher.decrypt(ciphertext)
-    return plaintext
+import shutil
+from crypt import Encryption
 
 
 app = Flask(__name__)
-# app.secret_key = argv[1].encode()
+# app.secret_key = sys.argv[1].encode()
 app.secret_key = "bhfsuidbsbndisbds"
 app.permanent_session_lifetime = False
 
@@ -40,7 +29,7 @@ def main():
 @app.route("/crypto_form_handler", methods=["GET", "POST"])
 def crypto_form_handler():
     c_time = str(dt.now()).replace(' ', '-').replace(':', '-')
-    mkdir(str(c_time))
+    os.mkdir(str(c_time))
     uploaded_path = f"{c_time}/uploaded.bin"
     nonce_path = f"{c_time}/nonce.bin"
     result_path = f"{c_time}/result.bin"
@@ -50,28 +39,30 @@ def crypto_form_handler():
     file_contents = file.read()
     key = request.form['key'].encode()
     mode = request.form['crypt']
-    if mode == 'encrypt':
-        result, nonce = encrypt(file_contents, key)
-        with open(nonce_path, "wb") as opened:
-            opened.write(nonce)
-        with open(result_path, "wb") as opened:
-            opened.write(result)
-        result = send_file(make_archive("encrypted", "tar", str(c_time)))
-    elif mode == 'decrypt':
-        nonce = request.files["nonce"]
-        nonce.save(nonce_path)
-        with open(nonce_path, "rb") as stream:
-            nonce = stream.read()
-        result = decrypt(file_contents, key, nonce)
-        with open(result_path, "wb") as file:
-            file.write(result)
-        result = send_file(result_path)
-    else:
-        flash('Режим не выбран')
-        result = redirect(request.url)
+    process = Encryption()
+    match mode:
+        case 'encrypt':
+            result, nonce = Encryption.encrypt(file_contents, key)
+            with open(nonce_path, "wb") as opened:
+                opened.write(nonce)
+            with open(result_path, "wb") as opened:
+                opened.write(result)
+            result = send_file(shutil.make_archive("encrypted", "tar", str(c_time)))
+       case 'decrypt':
+            nonce = request.files["nonce"]
+            nonce.save(nonce_path)
+            with open(nonce_path, "rb") as stream:
+                nonce = stream.read()
+            result = Encryption.decrypt(file_contents, key, nonce)
+            with open(result_path, "wb") as file:
+                file.write(result)
+            result = send_file(result_path)
+        case _:
+            flash('Режим не выбран')
+            result = redirect(request.url)
     file.close()
-    chmod(c_time, S_IWRITE)
-    rmtree(c_time, ignore_errors=True)
+    os.chmod(c_time, S_IWRITE)
+    shutil.rmtree(c_time, ignore_errors=True)
     return result
 
 
