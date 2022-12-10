@@ -11,8 +11,7 @@ from crypt import Encryption
 
 
 app = Flask(__name__)
-# app.secret_key = sys.argv[1].encode()
-app.secret_key = "bhfsuidbsbndisbds"
+app.secret_key = sys.argv[1].encode()
 app.permanent_session_lifetime = False
 
 
@@ -48,7 +47,7 @@ def crypto_form_handler():
             with open(result_path, "wb") as opened:
                 opened.write(result)
             result = send_file(shutil.make_archive("encrypted", "tar", str(c_time)))
-       case 'decrypt':
+        case 'decrypt':
             nonce = request.files["nonce"]
             nonce.save(nonce_path)
             with open(nonce_path, "rb") as stream:
@@ -57,9 +56,6 @@ def crypto_form_handler():
             with open(result_path, "wb") as file:
                 file.write(result)
             result = send_file(result_path)
-        case _:
-            flash('Режим не выбран')
-            result = redirect(request.url)
     file.close()
     os.chmod(c_time, S_IWRITE)
     shutil.rmtree(c_time, ignore_errors=True)
