@@ -82,4 +82,4 @@ def other_error_handler(error):
 
 if __name__ == "__main__":
     from waitress import serve
-    serve(app, host="127.0.0.1", port=8080)
+    serve(app, host="127.0.0.1", port=80)
