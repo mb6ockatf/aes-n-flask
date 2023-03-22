@@ -1,13 +1,13 @@
+#!/usr/bin/env python3
 import os
 import sys
 from datetime import datetime as dt
-from shutil import make_archive
-from flask import Flask, request, render_template, send_file, flash, redirect, session, url_for
+from shutil import make_archive, rmtree
+from stat import S_IWRITE
+from flask import Flask, request, render_template, send_file, redirect, url_for
 from werkzeug.exceptions import HTTPException
 from Crypto.Cipher import AES
-from stat import S_IWRITE
-import shutil
-from crypt import Encryption
+from crypt_lib import Encryption
 
 
 app = Flask(__name__)
@@ -15,9 +15,9 @@ app.secret_key = sys.argv[1].encode()
 app.permanent_session_lifetime = False
 
 
-"""@app.route("/favicon.ico")
+@app.route("/favicon.ico")
 def favicon():
-    return redirect(url_for('avicon.ico'))"""
+    return redirect(url_for('favicon.ico'))
 
 
 @app.route("/")
@@ -38,7 +38,6 @@ def crypto_form_handler():
     file_contents = file.read()
     key = request.form['key'].encode()
     mode = request.form['crypt']
-    process = Encryption()
     match mode:
         case 'encrypt':
             result, nonce = Encryption.encrypt(file_contents, key)
@@ -46,7 +45,7 @@ def crypto_form_handler():
                 opened.write(nonce)
             with open(result_path, "wb") as opened:
                 opened.write(result)
-            result = send_file(shutil.make_archive("encrypted", "tar", str(c_time)))
+            result = send_file(make_archive("encrypted", "tar", str(c_time)))
         case 'decrypt':
             nonce = request.files["nonce"]
             nonce.save(nonce_path)
@@ -58,7 +57,7 @@ def crypto_form_handler():
             result = send_file(result_path)
     file.close()
     os.chmod(c_time, S_IWRITE)
-    shutil.rmtree(c_time, ignore_errors=True)
+    rmtree(c_time, ignore_errors=True)
     return result
 
 
