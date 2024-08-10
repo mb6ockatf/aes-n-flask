@@ -155,5 +155,4 @@ hosts linguist-documentation=false
 hosts linguist-detectable
 PKGBUILD linguist-documentation=false
 PKGBUILD linguist-detectable
-COPYING linguist-documentation=false
-COPYING linguist-detectable
+
