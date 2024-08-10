@@ -1,0 +1,343 @@
+commit e16d7144a999f46c81b54d2d64104d361a1579c8
+Author: mb6ockatf <mdddmmmm@yandex.ru>
+Date:   Sat Aug 10 16:01:41 2024 +0300
+
+    chore(CONTRIBUTING): added
+
+commit 1a8591ab9e1282c5fdd9b78487f0e9ca8f1e528a
+Author: mb6ockatf <mdddmmmm@yandex.ru>
+Date:   Fri Aug 9 21:20:51 2024 +0300
+
+    chore(COPYING): AGPL
+
+commit 31e2eb1bc95cc3c0b3642b7e274f477f5558b5d0
+Author: mb6ockatf <mdddmmmm@yandex.ru>
+Date:   Sat Oct 14 16:18:19 2023 +0300
+
+    docs: project text
+
+commit bdc2ce3176a86aba6eb865636ee57fef43ef183e
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Jul 2 18:20:13 2023 +0300
+
+    fix: fix some bugs i created
+
+commit 60c8c27292294428a74ccd95bbfb418ab71903d6
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat May 13 11:58:36 2023 +0300
+
+    chore(LICENSE): move to AGPL v3
+
+commit 628769f46f15a07018dad616d504c3898085ef14
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat May 13 11:56:31 2023 +0300
+
+    add: dev environment script (#10)
+
+commit 29f3292bd58c9a44573633b203bb1a746e23faa6
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Wed Mar 22 22:21:01 2023 +0300
+
+    fix: pylint requirements (#9)
+    
+    * fix: pylint requirements
+    
+    * update: README.md
+    
+    * add: CHANGELOG.md
+
+commit 4032058e0436db48132e4bb6b3e7d944ea7628f2
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Thu Feb 16 09:06:05 2023 +0300
+
+    change app port & refactor
+
+commit bf6d7551fcdd90523ff8d625061cea5dbdb774ce
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Dec 10 15:03:10 2022 +0300
+
+    fix: link
+
+commit 4e434cffd0b07a95b257aa3d5f8a254fb267ccca
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Dec 10 15:02:32 2022 +0300
+
+    refactor: identation level
+
+commit f377a4726d85b0d7dc2b06d2b5fe8721a46fec51
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Dec 10 15:01:39 2022 +0300
+
+    remove unreachable code
+
+commit 0120586cbe13e4bba2f3fee20c64446c45e4d74d
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Wed Nov 9 14:19:06 2022 +0300
+
+    move requirements.txt to root (#7)
+
+commit 1204b0f7b5a6b82526758d1f4d8807562ebf35c5
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Wed Nov 9 14:13:50 2022 +0300
+
+    refactor: src folder (#2); ecnryption class (#3)
+
+commit 20813c5f828a83fc077d075da4a28bf8935517ed
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Nov 6 12:14:53 2022 +0300
+
+    Create codeql.yml
+    
+    Signed-off-by: mb6ockatf <mb6ockatf@relay.firefox.com>
+
+commit 2176ba2a739a0037b37b9018c18c690185fe6c4e
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Nov 6 12:13:32 2022 +0300
+
+    Delete codeql.yml
+    
+    Signed-off-by: mb6ockatf <mb6ockatf@relay.firefox.com>
+
+commit 141b4ab3e110d88d8934eef966457c67de2bea77
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Nov 6 12:13:18 2022 +0300
+
+    Delete pull_request_template.md
+    
+    Signed-off-by: mb6ockatf <mb6ockatf@relay.firefox.com>
+
+commit 073aff95abb024811d6782914b0937d164984a3d
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Nov 6 12:13:08 2022 +0300
+
+    Delete other.md
+    
+    Signed-off-by: mb6ockatf <mb6ockatf@relay.firefox.com>
+
+commit 5a2be5432563e23ce83b81f3c2bfd7fe6b300061
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Nov 6 12:12:59 2022 +0300
+
+    Delete bug.md
+    
+    Signed-off-by: mb6ockatf <mb6ockatf@relay.firefox.com>
+
+commit 3cd7bb2f3acb589e89b0a7b15ba28b9c8fc86d9b
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Sep 3 19:28:20 2022 +0300
+
+    ok
+
+commit a6c78893d4dcb9fb4b37ebb61b808e91aa30b477
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Sep 3 18:07:54 2022 +0300
+
+    correct .gitignore
+
+commit ff77da9887b4ff44e6164bbee2cc3a2a26995f97
+Author: mb6ockatf <104227451+mb6ockatf@users.noreply.github.com>
+Date:   Wed Jul 20 18:06:00 2022 +0300
+
+    Update pull_request_template.md
+    
+    Signed-off-by: mb6ockatf <104227451+mb6ockatf@users.noreply.github.com>
+
+commit c11b1c8458a8dd84d5924340953711f0f3c613da
+Author: mb6ockatf <104227451+mb6ockatf@users.noreply.github.com>
+Date:   Wed Jul 20 18:05:40 2022 +0300
+
+    Create pull_request_template.md
+    
+    Signed-off-by: mb6ockatf <104227451+mb6ockatf@users.noreply.github.com>
+
+commit 7a1ccee26773a92135b376254cd0854d48746c9d
+Author: mb6ockatf <104227451+mb6ockatf@users.noreply.github.com>
+Date:   Wed Jul 20 17:58:53 2022 +0300
+
+    Update issue templates
+
+commit c256ea61f09754759a18b35fb7d5c17b422197c2
+Author: mb6ockatf <104227451+mb6ockatf@users.noreply.github.com>
+Date:   Wed Jul 20 17:57:06 2022 +0300
+
+    Update CONTRIBUTING.md
+    
+    Signed-off-by: mb6ockatf <104227451+mb6ockatf@users.noreply.github.com>
+
+commit d64f0cc5f065e15cc18c1eefce42bc2f9af6a176
+Author: mb6ockatf <104227451+mb6ockatf@users.noreply.github.com>
+Date:   Wed Jul 20 17:56:44 2022 +0300
+
+    Update CODE_OF_CONDUCT.md
+    
+    Signed-off-by: mb6ockatf <104227451+mb6ockatf@users.noreply.github.com>
+
+commit e6b7a1d40744cd3a65de51230d5d36c4907329fe
+Merge: aa7e248 ab0c42d
+Author: mdddmmmm <mb6ockatf@relay.firefox.com>
+Date:   Wed Jul 20 17:53:54 2022 +0300
+
+    Merge branch 'main' into development
+
+commit aa7e248d40560e832b22f78b74119a7bc91a4009
+Author: mdddmmmm <mb6ockatf@relay.firefox.com>
+Date:   Wed Jul 20 17:52:23 2022 +0300
+
+    fit "community standards"
+
+commit ab0c42d466b39e51eb414b44c1ed3a80932d06b7
+Author: mb6ockatf <104227451+mb6ockatf@users.noreply.github.com>
+Date:   Wed Jul 20 17:43:55 2022 +0300
+
+    Create LICENSE
+    
+    Signed-off-by: mb6ockatf <104227451+mb6ockatf@users.noreply.github.com>
+
+commit 4ed8e1739435f997446b372cb2b1e4df91fab6c5
+Author: mdddmmmm <mb6ockatf@relay.firefox.com>
+Date:   Wed Jul 20 17:09:42 2022 +0300
+
+    fix merge errors-3
+
+commit 47d1c8882d35f08af42b7a5c0c54da21aad11cbf
+Merge: 431ea74 7267742
+Author: mdddmmmm <mb6ockatf@relay.firefox.com>
+Date:   Wed Jul 20 17:06:54 2022 +0300
+
+    Merge branch 'main' of github.com:mb6ockatf/aes_n_flask into main
+    fix merge errors-3
+
+commit 431ea745a1d708ea611c4fa8ff9c2f1da11d5f1d
+Merge: 939caff 6ed6227
+Author: mdddmmmm <mb6ockatf@relay.firefox.com>
+Date:   Wed Jul 20 17:01:38 2022 +0300
+
+    fix merge errors-2
+    
+    fix merge errors-2
+
+commit 72677420d7aa88790459ef45603c6b78fa14e7cf
+Merge: 939caff 6ed6227
+Author: mdddmmmm <mb6ockatf@relay.firefox.com>
+Date:   Wed Jul 20 17:01:38 2022 +0300
+
+    fix merge errors-2
+
+commit 939caff7b5eafd817a2bb32d9bfc1b3811878e61
+Author: mdddmmmm <mb6ockatf@relay.firefox.com>
+Date:   Wed Jul 20 17:00:35 2022 +0300
+
+    fix merge errors
+
+commit 6ed62276e39eb206ae57c38dfc539578984137df
+Author: mdddmmmm <mb6ockatf@relay.firefox.com>
+Date:   Wed Jul 20 16:54:12 2022 +0300
+
+    refactor & secureity changes
+    
+    File folding is now returned to fit in flask requirements (I do not want to change default places)
+    Waitress added
+    Now, all uploaded files are deleted when the task is completed.
+
+commit a25bf53d2fd47eb67f40ae57c3cede9dbb922434
+Author: mdddmmmm <mb6ockatf@relay.firefox.com>
+Date:   Wed Jul 20 11:24:04 2022 +0300
+
+    refactor; remove file folding
+
+commit d3f5cbee67a5c700568972098a33b9426609e2ec
+Author: mdddmmmm <mb6ockatf@relay.firefox.com>
+Date:   Wed Jul 20 11:20:57 2022 +0300
+
+    add all files
+
+commit 5527042fd32d4dbb398fe071d8b349e8a9037eb3
+Author: mdddmmmm <mb6ockatf@relay.firefox.com>
+Date:   Wed Jul 20 11:16:29 2022 +0300
+
+    refactor css, remove folding
+
+commit cf361a7c3e6a9c6a77599a97c3ef8d405267251d
+Author: mdddmmmm <mb6ockatf@relay.firefox.com>
+Date:   Wed Jun 29 13:45:46 2022 +0300
+
+    Add fonts && delete README.md as no more needed
+
+commit f49c052c97d5948ce49e25d8971b0863f09f1947
+Merge: a970e45 79f83fb
+Author: mdddmmmm <mb6ockatf@relay.firefox.com>
+Date:   Wed Jun 29 13:44:03 2022 +0300
+
+    Add fonts
+
+commit 79f83fb9af41230ad3cbf05e7e0789fb931bd57a
+Author: mb6ockatf <104227451+mb6ockatf@users.noreply.github.com>
+Date:   Wed Jun 29 11:56:57 2022 +0300
+
+    delete exit.txt
+    
+    this file is no more needed
+    
+    Signed-off-by: mb6ockatf <104227451+mb6ockatf@users.noreply.github.com>
+
+commit 318273a9d84d47feef3d891afc3e7b5d616e564f
+Merge: 9dba901 498574b
+Author: root <root@Latitude-D630.kali>
+Date:   Wed Jun 8 23:40:32 2022 +0300
+
+    Merge branch 'dev' of github.com:mb6ockatf/rsa_n_flask into dev
+    Pull some changes
+
+commit 9dba901ba411927c7fba68d7461109d53e350469
+Author: root <root@Latitude-D630.kali>
+Date:   Wed Jun 8 23:39:24 2022 +0300
+
+    First working version
+
+commit a970e45880896a36c14d560211537d2336ec8bf1
+Author: mb6ockatf <104227451+mb6ockatf@users.noreply.github.com>
+Date:   Tue Jun 7 17:31:59 2022 +0300
+
+    Update README.md
+
+commit 928a539585c9ac57b01a3a6f6f2af959a58ad24a
+Author: mb6ockatf <104227451+mb6ockatf@users.noreply.github.com>
+Date:   Tue Jun 7 17:31:20 2022 +0300
+
+    Update codeql.yml
+
+commit 04ea6e2a77aa00e1a6bf88864c34816a60c37529
+Author: mb6ockatf <104227451+mb6ockatf@users.noreply.github.com>
+Date:   Tue Jun 7 17:29:02 2022 +0300
+
+    Create codeql.yml
+
+commit 498574b87414cbed5a726721496697e44456520e
+Author: mb6ockatf <104227451+mb6ockatf@users.noreply.github.com>
+Date:   Tue Jun 7 17:25:28 2022 +0300
+
+    Create requirements.txt
+
+commit d6dc76a8585fb3af54916ba305a5604d6f169406
+Author: mb6ockatf <104227451+mb6ockatf@users.noreply.github.com>
+Date:   Tue Jun 7 17:21:56 2022 +0300
+
+    Create dependabot.yml
+
+commit 9a03c32d7ff3a2abf9ac8bbead8bdaa7b5898077
+Author: mb6ockatf <104227451+mb6ockatf@users.noreply.github.com>
+Date:   Tue Jun 7 15:57:26 2022 +0300
+
+    change repository name
+
+commit 5b877fbf3a30c0cedcaecc6a24eaf99dc28a8256
+Author: root <root@Latitude-D630.kali>
+Date:   Mon Jun 6 00:32:06 2022 +0300
+
+    Initial commit
+
+commit 451dea22f33ef662e37e9792bd2663f41a27ac7e
+Author: mb6ockatf <104227451+mb6ockatf@users.noreply.github.com>
+Date:   Fri May 27 12:37:05 2022 +0300
+
+    Initial commit
