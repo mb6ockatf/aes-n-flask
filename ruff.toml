@@ -1,0 +1,5 @@
+[lint]
+select = ["E", "F"]
+
+[lint.per-file-ignores]
+"src/crypt_lib/__init__.py" = ["F403"]

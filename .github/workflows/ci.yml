@@ -1,0 +1,44 @@
+# ci.yml - install the dependencies and lint the Python sources.
+#
+# Copyright (C) 2026 mb6ockatf
+# This file is free software; see COPYING for copying conditions.
+#
+# ruff is pinned so that a new release cannot fail the build on its own;
+# the rule selection lives in ruff.toml.
+
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  RUFF_VERSION: 0.17.1
+
+jobs:
+  lint:
+    name: Install and lint
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+          cache: pip
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+      - name: Install ruff
+        run: python -m pip install "ruff==$RUFF_VERSION"
+      - name: Lint
+        run: ruff check --output-format=github .
