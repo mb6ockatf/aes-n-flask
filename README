@@ -1,0 +1,38 @@
+aes_n_flask -- encrypt files with AES in a Flask web app
+========================================================
+
+This is the main part of my school cryptography project.  I started
+working on it in May 2022 (8th school grade) and presented it in March
+2023.  It is written in Python with the Flask framework.
+
+Requirements
+------------
+
+Python 3 and the packages in requirements.txt (Flask, waitress,
+Werkzeug and pycryptodome).  setup_dev.sh creates a virtual environment
+in venv/ and installs them there.
+
+Using it
+--------
+
+Clone the repository, then start src/app.py with a secret key made of
+random letters as its argument:
+
+    git clone https://github.com/mb6ockatf/aes-n-flask.git
+    cd aes-n-flask
+    python3 src/app.py RANDOM-LETTERS
+
+The app starts on 127.0.0.1.
+
+Reporting bugs
+--------------
+
+Report bugs at https://github.com/mb6ockatf/aes-n-flask/issues.
+
+Copying
+-------
+
+Copyright (C) 2022-2023 mb6ockatf
+
+aes_n_flask is released under the GNU Affero General Public License,
+version 3; see COPYING.
